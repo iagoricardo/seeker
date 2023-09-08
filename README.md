@@ -33,75 +33,35 @@
   </a>
 </p>
 
-Concept behind Seeker is simple, just like we host phishing pages to get credentials why not host a fake page that requests your location like many popular location based websites. Read more on <a href="https://thewhiteh4t.github.io"> thewhiteh4t's Blog </a>.Seeker Hosts a fake website which asks for Location Permission and if the target allows it, we can get :
+O conceito por trás do Seeker é simples, assim como hospedamos páginas de phishing para obter credenciais, por que não hospedar uma página falsa que solicita sua localização, como muitos sites populares baseados em localização. Leia mais no Blog thewhiteh4t’s. Seeker hospeda um site falso que pede permissão de localização e, se o alvo permitir, podemos obter:
 
-* Longitude
-* Latitude
-* Accuracy
-* Altitude - Not always available
-* Direction - Only available if user is moving
-* Speed - Only available if user is moving
+Longitude Latitude Precisão Altitude - nem sempre disponível Direção - apenas disponível se o usuário estiver se movendo Velocidade - apenas disponível se o usuário estiver se movendo Juntamente com as informações de localização, também obtemos informações do dispositivo sem permissões:
 
-Along with Location Information we also get **Device Information** without any permissions :
+ID exclusivo usando impressão digital de tela Modelo do dispositivo - nem sempre disponível Sistema operacional Plataforma Número de núcleos de CPU - resultados aproximados Quantidade de RAM - resultados aproximados Resolução da tela Informações da GPU Nome e versão do navegador Endereço IP público Endereço IP local Porta local Reconhecimento automático de endereço IP é realizado após o recebimento das informações acima.
 
-* Unique ID using Canvas Fingerprinting
-* Device Model - Not always available
-* Operating System
-* Platform
-* Number of CPU Cores - Approximate Results
-* Amount of RAM - Approximate Results
-* Screen Resolution
-* GPU information
-* Browser Name and Version
-* Public IP Address
-* Local IP Address
-* Local Port
+Esta ferramenta é uma prova de conceito e é apenas para fins educacionais, Seeker mostra quais dados um site malicioso pode coletar sobre você e seus dispositivos e por que você não deve clicar em links aleatórios e permitir permissões críticas, como localização etc.
 
-**Automatic IP Address Reconnaissance** is performed after the above information is received.
+Como isso é diferente da GeoLocalização IP Outras ferramentas e serviços oferecem GeoLocalização IP que NÃO é precisa e não fornece a localização do alvo, mas sim a localização aproximada do ISP.
 
-**This tool is a Proof of Concept and is for Educational Purposes Only, Seeker shows what data a malicious website can gather about you and your devices and why you should not click on random links and allow critical permissions such as Location etc.**
+### Seeker usa HTML API e obtém permissão de localização e, em seguida, obtém longitude e latitude usando o hardware GPS, que está presente no dispositivo, portanto, Seeker funciona melhor com smartphones, se o hardware GPS não estiver presente, como em um laptop , Seeker recorre à GeoLocalização IP ou procurará coordenadas armazenadas em cache.
 
-## How is this Different from IP GeoLocation
+Geralmente, se um usuário aceita permissões de localização, a precisão das informações recebidas é precisa em aproximadamente 30 metros
 
-* Other tools and services offer IP Geolocation which is NOT accurate at all and does not give location of the target instead it is the approximate location of the ISP.
+### A precisão depende de vários fatores que você pode ou não controlar, como:
 
-* Seeker uses HTML API and gets Location Permission and then grabs Longitude and Latitude using GPS Hardware which is present in the device, so Seeker works best with Smartphones, if the GPS Hardware is not present, such as on a Laptop, Seeker fallbacks to IP Geolocation or it will look for Cached Coordinates.  
+Dispositivo - não funcionará em laptops ou telefones que tenham GPS quebrado Navegador - alguns navegadores bloqueiam javascripts Calibração do GPS - se o GPS não estiver calibrado, você pode obter resultados imprecisos e isso é muito comum Modelos disponíveis:
 
-* Generally if a user accepts location permsission, Accuracy of the information recieved is **accurate to approximately 30 meters**
+### Google Drive  
+### WhatsApp  
+### Telegrama Zoom 
+### Google reCAPTCHA 
+Crie seu próprio modelo! As etapas para permitir que você crie seu modelo são descritas neste tutorial
 
-* Accuracy depends on multiple factors which you may or may not control such as :
-  * Device - Won't work on laptops or phones which have broken GPS
-  * Browser - Some browsers block javascripts
-  * GPS Calibration - If GPS is not calibrated you may get inaccurate results and this is very common
+Depois que seu modelo estiver pronto, não se esqueça de propô-lo à comunidade por meio de um PR (pull request)
 
-## Templates
+Testado em: Kali Linux BlackArch Linux Ubuntu Fedora Kali Nethunter Termux Parrot OS OSX - Monterey v.12.0.1 
 
-Available Templates : 
-
-* NearYou
-* Google Drive (Suggested by @Akaal_no_one)
-* WhatsApp (Suggested by @Dazmed707)
-* Telegram
-* Zoom (Made by @a7maadf)
-* Google reCAPTCHA (Made by @MrEgyptian)
-
-Create your own template ! 
-Steps to let you create your template is described in this [how-to](./createTemplate.md)
-
-Once your template is ready, **do not forget to propose it to the community via a PR (pull request)**
-
-## Tested On :
-
-* Kali Linux
-* BlackArch Linux
-* Ubuntu
-* Fedora
-* Kali Nethunter
-* Termux
-* Parrot OS
-* OSX - Monterey v.12.0.1
-
-## Installation
+### Instalação
 
 ### Kali Linux / Arch Linux / Ubuntu / Fedora / Parrot OS / Termux
 
